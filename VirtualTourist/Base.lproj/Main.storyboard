@@ -105,6 +105,10 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J3m-W3-fcJ">
+                                <rect key="frame" x="0.0" y="49" width="375" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7S4-PN-iXf"/>
@@ -112,6 +116,7 @@
                     <navigationItem key="navigationItem" id="JUD-dF-9tN"/>
                     <connections>
                         <outlet property="collection" destination="Lrs-SQ-ZQJ" id="HXO-Sh-NRh"/>
+                        <outlet property="mapView" destination="J3m-W3-fcJ" id="VYq-bs-POy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1D-jm-he7" userLabel="First Responder" sceneMemberID="firstResponder"/>

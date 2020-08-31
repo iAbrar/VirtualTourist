@@ -20,16 +20,21 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     @IBOutlet var collection: UICollectionView!
     
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collection.dataSource = self
         collection.delegate = self
         
+        mapView.addAnnotation(pin!)
+        mapView.showAnnotations([pin!], animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(pin?.coordinate.latitude)
+       
         guard  let lat = pin?.coordinate.latitude else { return }
         guard  let lon = pin?.coordinate.longitude else { return }
         
