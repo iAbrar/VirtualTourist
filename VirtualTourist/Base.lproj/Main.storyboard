@@ -109,8 +109,26 @@
                                 <rect key="frame" x="0.0" y="49" width="375" height="181"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npx-c4-OCs">
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="SDw-DC-zWG"/>
+                                </constraints>
+                                <state key="normal" title="New Collection">
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="newCollectionTapped:" destination="hOJ-3W-npu" eventType="touchUpInside" id="mJZ-55-xcO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="npx-c4-OCs" firstAttribute="trailing" secondItem="CdC-do-Nlw" secondAttribute="trailing" id="6Oz-PW-F2W"/>
+                            <constraint firstItem="npx-c4-OCs" firstAttribute="leading" secondItem="CdC-do-Nlw" secondAttribute="leading" id="Jeb-L3-Dbc"/>
+                            <constraint firstItem="npx-c4-OCs" firstAttribute="bottom" secondItem="CdC-do-Nlw" secondAttribute="bottom" id="ub4-LK-eov"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7S4-PN-iXf"/>
                     </view>
                     <navigationItem key="navigationItem" id="JUD-dF-9tN"/>

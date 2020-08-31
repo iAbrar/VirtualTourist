@@ -17,6 +17,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var imagesUrl = [String]()
     var pin : MKAnnotation?
+    var page = 1
     
     @IBOutlet var collection: UICollectionView!
     
@@ -37,9 +38,10 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
        
         guard  let lat = pin?.coordinate.latitude else { return }
         guard  let lon = pin?.coordinate.longitude else { return }
+
+        page = 1
         
-        
-        FlickrAPI.downloadJSON(longitude: lon, latitude: lat, page: 1)
+        FlickrAPI.downloadJSON(longitude: lon, latitude: lat, page: page)
         { images, error in
             
             
@@ -53,28 +55,12 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
                 
             }
             
-            print("willwill",self.imagesUrl.count)
-            
         }
-        
-        
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    // MARK: UICollectionViewDataSource
     
     
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+
         return imagesUrl.count
         
     }
@@ -93,5 +79,28 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
 
+    @IBAction func newCollectionTapped(_ sender: UIButton) {
+        
+        page = page+1
+        print(page)
+        
+        FlickrAPI.downloadJSON(longitude: pin!.coordinate.longitude, latitude: pin!.coordinate.latitude, page: page)
+            { images, error in
+                
+                
+                if error == nil
+                {
+                    DispatchQueue.main.async {
+                        self.imagesUrl = images
+                        self.collection.reloadData()
+                        
+                    }
+                    
+                }
+                
+        }
+    }
+    
+    
     
 }
