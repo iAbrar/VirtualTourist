@@ -71,7 +71,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         //        cell.imageView.image = UIImage(named: "y9DpT")
         let url = URL(string: imagesUrl[indexPath.row])
         
-        let image = UIImage(named: "y9DpT")
+        let image = UIImage(named: "placeholder")
         cell.imageView.kf.setImage(with: url, placeholder: image)
         
         
