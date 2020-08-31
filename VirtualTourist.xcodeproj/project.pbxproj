@@ -19,6 +19,7 @@
 		888889E824F2DE14004D1FB1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888889E724F2DE14004D1FB1 /* CollectionViewCell.swift */; };
 		88B6B83424FC5580000E2F99 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6B83324FC5580000E2F99 /* FlickrAPI.swift */; };
 		88B6B83724FD3389000E2F99 /* VirtualTourist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88B6B83524FD3389000E2F99 /* VirtualTourist.xcdatamodeld */; };
+		88B6B83924FD3956000E2F99 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6B83824FD3956000E2F99 /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		888889E724F2DE14004D1FB1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		88B6B83324FC5580000E2F99 /* FlickrAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
 		88B6B83624FD3389000E2F99 /* VirtualTourist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VirtualTourist.xcdatamodel; sourceTree = "<group>"; };
+		88B6B83824FD3956000E2F99 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		CC7CD6C896E2CCFC351CE51D /* Pods-VirtualTourist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualTourist.release.xcconfig"; path = "Target Support Files/Pods-VirtualTourist/Pods-VirtualTourist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 			children = (
 				884CFD7F24EED59B00A4797C /* FlickrData.swift */,
 				88B6B83524FD3389000E2F99 /* VirtualTourist.xcdatamodeld */,
+				88B6B83824FD3956000E2F99 /* DataController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				88B6B83424FC5580000E2F99 /* FlickrAPI.swift in Sources */,
 				888889E824F2DE14004D1FB1 /* CollectionViewCell.swift in Sources */,
 				883BA51124EC47570041A013 /* ViewController.swift in Sources */,
+				88B6B83924FD3956000E2F99 /* DataController.swift in Sources */,
 				883BA50F24EC47570041A013 /* AppDelegate.swift in Sources */,
 				888889E624F2DDDA004D1FB1 /* CollectionViewController.swift in Sources */,
 			);
