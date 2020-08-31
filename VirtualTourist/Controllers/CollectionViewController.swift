@@ -8,13 +8,15 @@
 
 import UIKit
 import Kingfisher
+import MapKit
+
 
 private let reuseIdentifier = "customCell"
 
 class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var imagesUrl = [String]()
-    
+    var pin : MKAnnotation?
     
     @IBOutlet var collection: UICollectionView!
     
@@ -27,11 +29,12 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let lat = "24.7136"
-        let lon = "46.6753"
+        print(pin?.coordinate.latitude)
+        guard  let lat = pin?.coordinate.latitude else { return }
+        guard  let lon = pin?.coordinate.longitude else { return }
         
         
-        FlickrAPI.downloadJSON(longitude: lat, latitude: lon, page: 1)
+        FlickrAPI.downloadJSON(longitude: lon, latitude: lat, page: 1)
         { images, error in
             
             
