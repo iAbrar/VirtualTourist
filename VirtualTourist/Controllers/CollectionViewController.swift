@@ -78,7 +78,13 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        _ = self.imagesUrl.remove(at:indexPath.row)
+        self.collection.deleteItems(at: [indexPath])
+        print("delete")
+        
+    }
+    
     @IBAction func newCollectionTapped(_ sender: UIButton) {
         
         page = page+1
@@ -100,7 +106,5 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
                 
         }
     }
-    
-    
     
 }
