@@ -11,14 +11,10 @@ import Foundation
 class FlickrAPI{
     static let flickrURL = "https://api.flickr.com/services/rest?api_key=8d927e7b549ee5c8661eb815006bcbf3&method=flickr.photos.search&format=json&per_page=10&extras=url_m&nojsoncallback=1&accuracy=11"
     
-    var images = [String]()
-    static let latitude = "24.7136"
-    static let longitude = "46.6753"
-    static let page = 1
+
     
     
-    
-    class func downloadJSON(longitude: String, latitude: String, page: Int, completion: @escaping ([String],String?)->Void){
+    class func downloadJSON(longitude: Double, latitude: Double, page: Int, completion: @escaping ([String],String?)->Void){
         var listOfimages = [String]()
         
         let url = "\(FlickrAPI.flickrURL)&lon=\(longitude)&lat=\(latitude)&page=\(page)"
