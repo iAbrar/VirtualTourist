@@ -53,7 +53,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
         mapView.deselectAnnotation(view.annotation! , animated: true)
-        let pin = view.annotation as! MKAnnotation
+        let pin = view.annotation!
         
 
         let vc = storyboard?.instantiateViewController(withIdentifier: "CollectionViewController") as! CollectionViewController;
