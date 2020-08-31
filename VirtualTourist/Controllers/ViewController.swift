@@ -26,8 +26,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let locationCoordinator = mapView.convert(location, toCoordinateFrom: mapView)
         
         let annotation = MKPointAnnotation()
-        annotation.title = "Location Title"
-        annotation.subtitle = "location subtitle"
+
         annotation.coordinate = CLLocationCoordinate2D(latitude: locationCoordinator.latitude, longitude: locationCoordinator.longitude)
         mapView.addAnnotation(annotation)
         
@@ -56,8 +55,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         mapView.deselectAnnotation(view.annotation! , animated: true)
         let pin = view.annotation as! MKAnnotation
         
-        print("pin clicked")
-        print(pin.coordinate.latitude)
+
         let vc = storyboard?.instantiateViewController(withIdentifier: "CollectionViewController") as! CollectionViewController;
         
         vc.pin = pin
