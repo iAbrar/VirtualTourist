@@ -10,16 +10,16 @@ import Foundation
 
 struct FlickrData: Decodable{
     let stat: String
-    let photos: Photos
+    let photos: Images
 }
 
-struct Photos: Decodable {
+struct Images: Decodable {
     let page: Int
     let total: String
-    let photo: [Photo]
+    let photo: [Image]
 }
 
-struct Photo: Decodable {
+struct Image: Decodable {
     let id: String
     let url_m: String
 }
