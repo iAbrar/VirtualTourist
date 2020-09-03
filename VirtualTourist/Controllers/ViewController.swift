@@ -105,14 +105,17 @@ class ViewController: UIViewController, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
         mapView.deselectAnnotation(view.annotation! , animated: true)
-        let pin = Pin(context: dataController.viewContext)
-        pin.latitude = (view.annotation?.coordinate.latitude)!
-        pin.longitude = (view.annotation?.coordinate.longitude)!
-        pin.creationDate = Date()
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "CollectionViewController") as! CollectionViewController;
+        let vc = storyboard?.instantiateViewController(withIdentifier: "CollectionViewController") as! CollectionViewController
         
-        vc.pin = pin
+        let annotation = view.annotation
+
+        for pin in fetchedResultsController.fetchedObjects!{
+            if(pin.latitude == annotation!.coordinate.latitude && pin.longitude == annotation!.coordinate.longitude){
+                vc.pin = pin
+                break
+            }
+        }
         vc.dataController = dataController
         
         

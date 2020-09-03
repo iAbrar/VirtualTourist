@@ -104,7 +104,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         } catch {
             print("error")
         }
-        print("delete")
+        
         
     }
     
@@ -159,7 +159,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "\(pin)-photos")
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "\(String(describing: pin))-photos")
         fetchedResultsController.delegate = self
         
         do {
