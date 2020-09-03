@@ -16,7 +16,7 @@ private let reuseIdentifier = "customCell"
 
 class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MKMapViewDelegate {
     
-//    var photos: [Photo] = []
+
     var pin : Pin!
     var dataController: DataController!
     var fetchedResultsController:NSFetchedResultsController<Photo>!
@@ -41,6 +41,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         annotation.coordinate = CLLocationCoordinate2D(latitude:pin.latitude, longitude: pin.longitude)
         
+        mapView.showAnnotations([annotation], animated: true)
         mapView.addAnnotation(annotation)
         
     }
