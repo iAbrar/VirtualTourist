@@ -42,7 +42,7 @@ class FlickrAPI{
                     
                     
                     for photo in photos{
-                        //                print(photo.url_m)
+                       
                         listOfimages.append(photo.url_m)
                     }
                     
