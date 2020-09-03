@@ -110,7 +110,17 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBAction func newCollectionTapped(_ sender: UIButton) {
         
         page = page+1
-        
+        if let photos = fetchedResultsController.fetchedObjects {
+            for photo in photos {
+                dataController.viewContext.delete(photo)
+                do {
+                    try dataController.viewContext.save()
+                } catch {
+                    print("error")
+                }
+            }
+        }
+       
         loadImages(pin!.longitude, pin!.latitude, page)
          collection.reloadData()
     }
